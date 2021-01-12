@@ -50,8 +50,7 @@ upload:
 # 阿里云的配置信息.
 aliyun:
   endpoint: oss-cn-beijing.aliyuncs.com
-  accessKeyId: LTAI4FvYWDpgWVFZSWH96Rrn
-  accessKeySecret: lkdnlhyfrvvoZP19U2DcjrVGuy8Cmn
-  bucketName: liyakai
-  expire: 2020-10-10
+  accessKeyId: LTAI4GCguS3G2Y15c6UqwJwH
+  accessKeySecret: MFQJa45ctOhQjeTr6qyGJYjeMrSk5Y
+  bucketName: login-demo
 
