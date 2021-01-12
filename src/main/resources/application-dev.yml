@@ -1,0 +1,57 @@
+server:
+  # 端口号
+  port: 80
+
+
+spring:
+  # 连接数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.31.52:3306/login?Unicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=GMT
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  # 发送邮件
+  mail:
+    host: smtp.126.com
+    username: zjw_2301211@126.com
+    password: z123123
+    activeUrl: http://localhost/
+
+mybatis:
+  configuration:
+    # 驼峰映射
+    map-underscore-to-camel-case: true
+  # 扫描映射文件.
+  mapper-locations: classpath:mapper/*.xml
+  # 别名
+  type-aliases-package: com.qf.entity
+  # typeHandler
+  type-handlers-package: com.qf.typehandler
+
+# 分页助手
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+# shiro的路径
+shiro:
+  loginUrl: /dev/user/register-ui
+  unauthorizedUrl: /
+
+# 上传图片的类型要求
+upload:
+  pic:
+    types: jpg,png,gif,jpeg,bmp
+# 阿里云的配置信息.
+aliyun:
+  endpoint: oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI4FvYWDpgWVFZSWH96Rrn
+  accessKeySecret: lkdnlhyfrvvoZP19U2DcjrVGuy8Cmn
+  bucketName: liyakai
+  expire: 2020-10-10
+
