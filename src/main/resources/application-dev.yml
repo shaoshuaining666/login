@@ -53,4 +53,6 @@ aliyun:
   accessKeyId: LTAI4GCguS3G2Y15c6UqwJwH
   accessKeySecret: MFQJa45ctOhQjeTr6qyGJYjeMrSk5Y
   bucketName: login-demo
+  expire: 2100-10-10
+
 
