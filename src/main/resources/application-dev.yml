@@ -7,7 +7,7 @@ spring:
   # 连接数据库
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.31.52:3306/login?Unicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=GMT
+    url: jdbc:mysql://192.168.31.52:3306/login?Unicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=GMT%2B8
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
@@ -22,7 +22,7 @@ spring:
 mybatis:
   configuration:
     # 驼峰映射
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
   # 扫描映射文件.
   mapper-locations: classpath:mapper/*.xml
   # 别名
@@ -30,9 +30,6 @@ mybatis:
   # typeHandler
   type-handlers-package: com.qf.typehandler
 
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # 分页助手
 pagehelper:
@@ -73,4 +70,14 @@ jwt:
 logging:
   level:
     root: info
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      id-type: auto
+      table-prefix: t_
+  mapper-locations: classpath:mapper/*.xml
 
