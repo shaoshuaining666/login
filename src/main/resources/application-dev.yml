@@ -1,6 +1,6 @@
 server:
   # 端口号
-  port: 80
+  port: 81
 
 
 spring:
@@ -30,6 +30,10 @@ mybatis:
   # typeHandler
   type-handlers-package: com.qf.typehandler
 
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 # 分页助手
 pagehelper:
   helperDialect: mysql
@@ -55,4 +59,18 @@ aliyun:
   bucketName: login-demo
   expire: 2100-10-10
 
+wechat:
+  appId: #自己公司公众号 APPID
+  secretKey: #自己公司公众号 secretKey
+  firstCodeRedirectUrl: http://localhost:81/OAuth/getOAuth    # 上线把 localhost:8080 改成上线域名 例：http://www.baidu.con/OAuth/getOAuth
+  loginCodeRedirectUrl: http://localhost:81/OAuth/getOAuth  # 上线把 localhost:8080 改成上线域名 例：http://www.baidu.con/OAuth/getOAuth
+
+jwt:
+  config:
+    outTime: 18144000000 #一个月 60000 #一分钟
+    securityKey: qazwsxedcrfvtgbyhn
+
+logging:
+  level:
+    root: info
 
