@@ -51,15 +51,14 @@ public class DetaitMsgController {
         File file = FileReadName.readFiles(multipartFile);
 //        String lastName = file.getName().substring(file.getName().lastIndexOf("."));
 //        String fileName = UUID.randomUUID().toString() + lastName;
-        StringBuffer url = new StringBuffer();
 
         try {
             String s = FilesUtils.fileUpload(file);
-            url.append(s);
+            System.out.println(s);
+            return JsonData.success(s);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println(url);
-        return JsonData.success(url);
+        return JsonData.success("上传OSS失败");
     }
 }
