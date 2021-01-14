@@ -2,8 +2,13 @@ server:
   # 端口号
   port: 81
 
-
 spring:
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
   # 连接数据库
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
