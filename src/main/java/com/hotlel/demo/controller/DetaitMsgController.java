@@ -22,11 +22,10 @@ public class DetaitMsgController {
     @Autowired
     private DetaitMsgService detaitMsgService;
 
-    @RequestMapping("addDetaitMsg")
+   /* @RequestMapping("addDetaitMsg")
     public JsonData addDetaitMsg(DetaitMsg detaitMsg){
-        detaitMsgService.addDetaitMsg(detaitMsg);
         return JsonData.success();
-    }
+    }*/
 
     @RequestMapping("getDetaitMsg")
     public JsonData getDetaitMsg(){
@@ -46,19 +45,20 @@ public class DetaitMsgController {
         return JsonData.success();
     }
 
-    @RequestMapping("uploadFile")
-    public JsonData uploadFile(@RequestBody MultipartFile multipartFile){
+    @RequestMapping("addDetaitMsg")
+    public JsonData uploadFile(@RequestBody MultipartFile multipartFile,DetaitMsg detaitMsg){
         File file = FileReadName.readFiles(multipartFile);
-//        String lastName = file.getName().substring(file.getName().lastIndexOf("."));
-//        String fileName = UUID.randomUUID().toString() + lastName;
 
         try {
             String s = FilesUtils.fileUpload(file);
+            detaitMsg.setPhoto(s);
+            detaitMsgService.addDetaitMsg(detaitMsg);
             System.out.println(s);
             return JsonData.success(s);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         return JsonData.success("上传OSS失败");
     }
 }
