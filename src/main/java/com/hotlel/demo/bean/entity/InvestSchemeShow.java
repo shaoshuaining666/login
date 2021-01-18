@@ -49,6 +49,9 @@ public class InvestSchemeShow {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date openday;
 
+    //是否认购  0：否 1：是
+    private Integer subscription;
+
     public Long getId() {
         return id;
     }
@@ -135,5 +138,13 @@ public class InvestSchemeShow {
 
     public void setOpenday(Date openday) {
         this.openday = openday;
+    }
+
+    public Integer getSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(Integer subscription) {
+        this.subscription = subscription;
     }
 }
