@@ -1,6 +1,7 @@
 package com.hotlel.demo.bean.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -8,7 +9,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-@TableName(value = "projectshow")
+@TableName(value = "project_show")
 public class ProjectShow {
 
     @TableId(value = "id",type = IdType.AUTO)
@@ -18,34 +19,44 @@ public class ProjectShow {
     private String company;
 
     //项目估值
-    private BigDecimal valueofmoney;
+    @TableField(value = "value_of_money")
+    private BigDecimal valueOfMoney;
 
     //筹集规模
-    private BigDecimal raisescale;
+    @TableField(value = "raise_scale")
+    private BigDecimal raiseScale;
 
     //起投金额
-    private BigDecimal minmoney;
+    @TableField(value = "min_money")
+    private BigDecimal minMoney;
 
     //每人限投
-    private BigDecimal maxmoney;
+    @TableField(value = "max_money")
+    private BigDecimal maxMoney;
 
     //投资期限
-    private String investortime;
+    @TableField(value = "investment_horizon")
+    private String investmentHorizon;
 
     //提前退出窗口期
-    private String earlyexit;
+    @TableField(value = "exit_early")
+    private String exitEarly;
 
     //方案id
-    private Integer investschemeId;
+    @TableField(value = "invest_scheme_id")
+    private Integer investSchemeId;
 
     //建筑状况id
-    private Integer housestatusId;
+    @TableField(value = "house_status_id")
+    private Integer houseStatusId;
 
     //项目特色
-    private String projectfea;
+    @TableField(value = "project_feature")
+    private String projectFeature;
 
     //风控措施
-    private String riskmeasure;
+    @TableField(value = "risk_control_measures")
+    private String riskControlMeasures;
 
     public Long getId() {
         return id;
@@ -63,83 +74,83 @@ public class ProjectShow {
         this.company = company;
     }
 
-    public BigDecimal getValueofmoney() {
-        return valueofmoney;
+    public BigDecimal getValueOfMoney() {
+        return valueOfMoney;
     }
 
-    public void setValueofmoney(BigDecimal valueofmoney) {
-        this.valueofmoney = valueofmoney;
+    public void setValueOfMoney(BigDecimal valueOfMoney) {
+        this.valueOfMoney = valueOfMoney;
     }
 
-    public BigDecimal getRaisescale() {
-        return raisescale;
+    public BigDecimal getRaiseScale() {
+        return raiseScale;
     }
 
-    public void setRaisescale(BigDecimal raisescale) {
-        this.raisescale = raisescale;
+    public void setRaiseScale(BigDecimal raiseScale) {
+        this.raiseScale = raiseScale;
     }
 
-    public BigDecimal getMinmoney() {
-        return minmoney;
+    public BigDecimal getMinMoney() {
+        return minMoney;
     }
 
-    public void setMinmoney(BigDecimal minmoney) {
-        this.minmoney = minmoney;
+    public void setMinMoney(BigDecimal minMoney) {
+        this.minMoney = minMoney;
     }
 
-    public BigDecimal getMaxmoney() {
-        return maxmoney;
+    public BigDecimal getMaxMoney() {
+        return maxMoney;
     }
 
-    public void setMaxmoney(BigDecimal maxmoney) {
-        this.maxmoney = maxmoney;
+    public void setMaxMoney(BigDecimal maxMoney) {
+        this.maxMoney = maxMoney;
     }
 
-    public String getInvestortime() {
-        return investortime;
+    public String getInvestmentHorizon() {
+        return investmentHorizon;
     }
 
-    public void setInvestortime(String investortime) {
-        this.investortime = investortime;
+    public void setInvestmentHorizon(String investmentHorizon) {
+        this.investmentHorizon = investmentHorizon;
     }
 
-    public String getEarlyexit() {
-        return earlyexit;
+    public String getExitEarly() {
+        return exitEarly;
     }
 
-    public void setEarlyexit(String earlyexit) {
-        this.earlyexit = earlyexit;
+    public void setExitEarly(String exitEarly) {
+        this.exitEarly = exitEarly;
     }
 
-    public Integer getInvestschemeId() {
-        return investschemeId;
+    public Integer getInvestSchemeId() {
+        return investSchemeId;
     }
 
-    public void setInvestschemeId(Integer investschemeId) {
-        this.investschemeId = investschemeId;
+    public void setInvestSchemeId(Integer investSchemeId) {
+        this.investSchemeId = investSchemeId;
     }
 
-    public Integer getHousestatusId() {
-        return housestatusId;
+    public Integer getHouseStatusId() {
+        return houseStatusId;
     }
 
-    public void setHousestatusId(Integer housestatusId) {
-        this.housestatusId = housestatusId;
+    public void setHouseStatusId(Integer houseStatusId) {
+        this.houseStatusId = houseStatusId;
     }
 
-    public String getProjectfea() {
-        return projectfea;
+    public String getProjectFeature() {
+        return projectFeature;
     }
 
-    public void setProjectfea(String projectfea) {
-        this.projectfea = projectfea;
+    public void setProjectFeature(String projectFeature) {
+        this.projectFeature = projectFeature;
     }
 
-    public String getRiskmeasure() {
-        return riskmeasure;
+    public String getRiskControlMeasures() {
+        return riskControlMeasures;
     }
 
-    public void setRiskmeasure(String riskmeasure) {
-        this.riskmeasure = riskmeasure;
+    public void setRiskControlMeasures(String riskControlMeasures) {
+        this.riskControlMeasures = riskControlMeasures;
     }
 }

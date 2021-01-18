@@ -1,12 +1,13 @@
 package com.hotlel.demo.bean.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName(value = "areashow")
+@TableName(value = "area_show")
 public class AreaShow {
 
     @TableId(value = "id",type = IdType.AUTO)
@@ -16,7 +17,8 @@ public class AreaShow {
     private String city;
 
     //详细地址
-    private String detailarea;
+    @TableField(value = "detail_area")
+    private String detailArea;
 
     //经度
     private String longitude;
@@ -25,9 +27,8 @@ public class AreaShow {
     private String latitude;
 
     //项目周边
-    private String projectsurroundings;
-
-
+    @TableField(value = "project_surroundings")
+    private String projectSurroundings;
 
     public Long getId() {
         return id;
@@ -45,12 +46,12 @@ public class AreaShow {
         this.city = city;
     }
 
-    public String getDetailarea() {
-        return detailarea;
+    public String getDetailArea() {
+        return detailArea;
     }
 
-    public void setDetailarea(String detailarea) {
-        this.detailarea = detailarea;
+    public void setDetailArea(String detailArea) {
+        this.detailArea = detailArea;
     }
 
     public String getLongitude() {
@@ -69,11 +70,11 @@ public class AreaShow {
         this.latitude = latitude;
     }
 
-    public String getProjectsurroundings() {
-        return projectsurroundings;
+    public String getProjectSurroundings() {
+        return projectSurroundings;
     }
 
-    public void setProjectsurroundings(String projectsurroundings) {
-        this.projectsurroundings = projectsurroundings;
+    public void setProjectSurroundings(String projectSurroundings) {
+        this.projectSurroundings = projectSurroundings;
     }
 }

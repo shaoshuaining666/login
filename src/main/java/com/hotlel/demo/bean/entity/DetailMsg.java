@@ -1,6 +1,7 @@
 package com.hotlel.demo.bean.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -11,8 +12,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-@TableName(value = "detaitmsg")
-public class DetaitMsg {
+@TableName(value = "detail_msg")
+public class DetailMsg {
 
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
@@ -44,22 +45,27 @@ public class DetaitMsg {
     private BigDecimal reserevd;
 
     //起投金额
-    private BigDecimal startmoney;
+    @TableField(value = "start_money")
+    private BigDecimal startMoney;
 
     //项目介绍id
-    private Integer projectshowId;
+    @TableField(value = "project_show_id")
+    private Integer projectShowId;
 
     //品牌故事
-    private String brandstory;
+    @TableField(value = "brand_story")
+    private String brandStory;
 
     //地理位置id
     private Integer areaId;
 
     //信息披露
-    private String messagep;
+    @TableField(value = "message_announce")
+    private String messageAnnounce;
 
     //投资方案id
-    private Integer investschemeId;
+    @TableField(value = "invest_scheme_id")
+    private Integer investSchemeId;
 
     public Long getId() {
         return id;
@@ -133,30 +139,6 @@ public class DetaitMsg {
         this.reserevd = reserevd;
     }
 
-    public BigDecimal getStartmoney() {
-        return startmoney;
-    }
-
-    public void setStartmoney(BigDecimal startmoney) {
-        this.startmoney = startmoney;
-    }
-
-    public Integer getProjectshowId() {
-        return projectshowId;
-    }
-
-    public void setProjectshowId(Integer projectshowId) {
-        this.projectshowId = projectshowId;
-    }
-
-    public String getBrandstory() {
-        return brandstory;
-    }
-
-    public void setBrandstory(String brandstory) {
-        this.brandstory = brandstory;
-    }
-
     public Integer getAreaId() {
         return areaId;
     }
@@ -165,19 +147,43 @@ public class DetaitMsg {
         this.areaId = areaId;
     }
 
-    public String getMessagep() {
-        return messagep;
+    public String getMessageAnnounce() {
+        return messageAnnounce;
     }
 
-    public void setMessagep(String messagep) {
-        this.messagep = messagep;
+    public void setMessageAnnounce(String messageAnnounce) {
+        this.messageAnnounce = messageAnnounce;
     }
 
-    public Integer getInvestschemeId() {
-        return investschemeId;
+    public BigDecimal getStartMoney() {
+        return startMoney;
     }
 
-    public void setInvestschemeId(Integer investschemeId) {
-        this.investschemeId = investschemeId;
+    public void setStartMoney(BigDecimal startMoney) {
+        this.startMoney = startMoney;
+    }
+
+    public Integer getProjectShowId() {
+        return projectShowId;
+    }
+
+    public void setProjectShowId(Integer projectShowId) {
+        this.projectShowId = projectShowId;
+    }
+
+    public String getBrandStory() {
+        return brandStory;
+    }
+
+    public void setBrandStory(String brandStory) {
+        this.brandStory = brandStory;
+    }
+
+    public Integer getInvestSchemeId() {
+        return investSchemeId;
+    }
+
+    public void setInvestSchemeId(Integer investSchemeId) {
+        this.investSchemeId = investSchemeId;
     }
 }

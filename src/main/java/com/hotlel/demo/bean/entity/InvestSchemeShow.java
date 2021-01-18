@@ -1,6 +1,7 @@
 package com.hotlel.demo.bean.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -11,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-@TableName(value = "investschemeshow")
+@TableName(value = "invest_scheme_show")
 public class InvestSchemeShow {
 
     @TableId(value = "id",type = IdType.AUTO)
@@ -21,22 +22,27 @@ public class InvestSchemeShow {
     private String name;
 
     //个人最多限购
-    private Integer maxbuy;
+    @TableField(value = "max_buy")
+    private Integer maxBuy;
 
     //单价
     private BigDecimal price;
 
     //现金回报
-    private BigDecimal cashback;
+    @TableField(value = "cash_back")
+    private BigDecimal cashBack;
 
     //消费回报
-    private BigDecimal conback;
+    @TableField(value = "consumption_back")
+    private BigDecimal consumptionBack;
 
     //额外福利
-    private String welfare;
+    @TableField(value = "additional_welfare")
+    private String additionalWelfare;
 
     //退出机制
-    private String exitmechanism;
+    @TableField(value = "exit_mechanism")
+    private String exitMechanism;
 
     //方案总份数
     private Integer sum;
@@ -47,7 +53,8 @@ public class InvestSchemeShow {
     //开放认购时间
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-    private Date openday;
+    @TableField(value = "open_day")
+    private Date openDay;
 
     //是否认购  0：否 1：是
     private Integer subscription;
@@ -68,12 +75,12 @@ public class InvestSchemeShow {
         this.name = name;
     }
 
-    public Integer getMaxbuy() {
-        return maxbuy;
+    public Integer getMaxBuy() {
+        return maxBuy;
     }
 
-    public void setMaxbuy(Integer maxbuy) {
-        this.maxbuy = maxbuy;
+    public void setMaxBuy(Integer maxBuy) {
+        this.maxBuy = maxBuy;
     }
 
     public BigDecimal getPrice() {
@@ -84,36 +91,36 @@ public class InvestSchemeShow {
         this.price = price;
     }
 
-    public BigDecimal getCashback() {
-        return cashback;
+    public BigDecimal getCashBack() {
+        return cashBack;
     }
 
-    public void setCashback(BigDecimal cashback) {
-        this.cashback = cashback;
+    public void setCashBack(BigDecimal cashBack) {
+        this.cashBack = cashBack;
     }
 
-    public BigDecimal getConback() {
-        return conback;
+    public BigDecimal getConsumptionBack() {
+        return consumptionBack;
     }
 
-    public void setConback(BigDecimal conback) {
-        this.conback = conback;
+    public void setConsumptionBack(BigDecimal consumptionBack) {
+        this.consumptionBack = consumptionBack;
     }
 
-    public String getWelfare() {
-        return welfare;
+    public String getAdditionalWelfare() {
+        return additionalWelfare;
     }
 
-    public void setWelfare(String welfare) {
-        this.welfare = welfare;
+    public void setAdditionalWelfare(String additionalWelfare) {
+        this.additionalWelfare = additionalWelfare;
     }
 
-    public String getExitmechanism() {
-        return exitmechanism;
+    public String getExitMechanism() {
+        return exitMechanism;
     }
 
-    public void setExitmechanism(String exitmechanism) {
-        this.exitmechanism = exitmechanism;
+    public void setExitMechanism(String exitMechanism) {
+        this.exitMechanism = exitMechanism;
     }
 
     public Integer getSum() {
@@ -132,12 +139,12 @@ public class InvestSchemeShow {
         this.surplus = surplus;
     }
 
-    public Date getOpenday() {
-        return openday;
+    public Date getOpenDay() {
+        return openDay;
     }
 
-    public void setOpenday(Date openday) {
-        this.openday = openday;
+    public void setOpenDay(Date openDay) {
+        this.openDay = openDay;
     }
 
     public Integer getSubscription() {

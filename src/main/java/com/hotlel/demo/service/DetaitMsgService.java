@@ -1,15 +1,15 @@
 package com.hotlel.demo.service;
 
-import com.hotlel.demo.bean.entity.DetaitMsg;
+import com.hotlel.demo.bean.entity.DetailMsg;
 
 import java.util.List;
 
 public interface DetaitMsgService {
-    void addDetaitMsg(DetaitMsg detaitMsg);
+    void addDetaitMsg(DetailMsg detailMsg);
 
-    List<DetaitMsg> getDetaitMsg();
+    List<DetailMsg> getDetaitMsg();
 
     void deleteDetaitMsg(Integer id);
 
-    void updateDetaitMsg(DetaitMsg detaitMsg);
+    void updateDetaitMsg(DetailMsg detailMsg);
 }

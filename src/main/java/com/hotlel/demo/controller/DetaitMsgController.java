@@ -1,7 +1,7 @@
 package com.hotlel.demo.controller;
 
 import com.hotlel.demo.bean.common.JsonData;
-import com.hotlel.demo.bean.entity.DetaitMsg;
+import com.hotlel.demo.bean.entity.DetailMsg;
 import com.hotlel.demo.service.DetaitMsgService;
 import com.hotlel.demo.util.FileReadName;
 import com.hotlel.demo.util.FilesUtils;
@@ -23,14 +23,14 @@ public class DetaitMsgController {
     private DetaitMsgService detaitMsgService;
 
    /* @RequestMapping("addDetaitMsg")
-    public JsonData addDetaitMsg(DetaitMsg detaitMsg){
+    public JsonData addDetaitMsg(DetailMsg detaitMsg){
         return JsonData.success();
     }*/
 
     @RequestMapping("getDetaitMsg")
     public JsonData getDetaitMsg(){
-        List<DetaitMsg> detaitMsgList = detaitMsgService.getDetaitMsg();
-        return JsonData.success(detaitMsgList);
+        List<DetailMsg> detailMsgList = detaitMsgService.getDetaitMsg();
+        return JsonData.success(detailMsgList);
     }
 
     @RequestMapping("deleteDetaitMsg")
@@ -40,19 +40,19 @@ public class DetaitMsgController {
     }
 
     @RequestMapping("updateDetaitMsg")
-    public JsonData updateDetaitMsg(DetaitMsg detaitMsg){
-        detaitMsgService.updateDetaitMsg(detaitMsg);
+    public JsonData updateDetaitMsg(DetailMsg detailMsg){
+        detaitMsgService.updateDetaitMsg(detailMsg);
         return JsonData.success();
     }
 
     @RequestMapping("addDetaitMsg")
-    public JsonData uploadFile(@RequestBody MultipartFile photo,DetaitMsg detaitMsg){
+    public JsonData uploadFile(@RequestBody MultipartFile photo, DetailMsg detailMsg){
         File file = FileReadName.readFiles(photo);
 
         try {
             String s = FilesUtils.fileUpload(file);
-            detaitMsg.setPhoto(s);
-            detaitMsgService.addDetaitMsg(detaitMsg);
+            detailMsg.setPhoto(s);
+            detaitMsgService.addDetaitMsg(detailMsg);
             System.out.println(s);
             return JsonData.success(s);
         } catch (FileNotFoundException e) {
