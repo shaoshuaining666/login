@@ -24,6 +24,11 @@ public class AreaShow {
     //纬度
     private String latitude;
 
+    //项目周边
+    private String projectsurroundings;
+
+
+
     public Long getId() {
         return id;
     }
@@ -62,5 +67,13 @@ public class AreaShow {
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
+    }
+
+    public String getProjectsurroundings() {
+        return projectsurroundings;
+    }
+
+    public void setProjectsurroundings(String projectsurroundings) {
+        this.projectsurroundings = projectsurroundings;
     }
 }
