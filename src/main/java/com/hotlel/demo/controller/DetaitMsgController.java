@@ -46,8 +46,8 @@ public class DetaitMsgController {
     }
 
     @RequestMapping("addDetaitMsg")
-    public JsonData uploadFile(@RequestBody MultipartFile multipartFile,DetaitMsg detaitMsg){
-        File file = FileReadName.readFiles(multipartFile);
+    public JsonData uploadFile(@RequestBody MultipartFile photo,DetaitMsg detaitMsg){
+        File file = FileReadName.readFiles(photo);
 
         try {
             String s = FilesUtils.fileUpload(file);
